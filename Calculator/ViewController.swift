@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func zeroPressed(_ sender: Any) {
+        model.addToNewValue(digit: "0")
+        labelDisplay.text = model.providedValue
+    }
 
     @IBAction func onePressed(_ sender: Any) {
         model.addToNewValue(digit: "1")
@@ -74,6 +79,11 @@ class ViewController: UIViewController {
         labelDisplay.text = model.providedValue
     }
     
+    @IBAction func pointPressed(_ sender: Any) {
+        model.addToNewValue(digit: ".")
+        labelDisplay.text = model.providedValue
+    }
+    
     @IBAction func multiply(_ sender: Any) {
         model.multiply()
     }
@@ -84,6 +94,10 @@ class ViewController: UIViewController {
     
     @IBAction func add(_ sender: Any) {
         model.add()
+    }
+    
+    @IBAction func subtract(_ sender: Any) {
+        model.subtract()
     }
     
     @IBAction func equals(_ sender: Any) {
