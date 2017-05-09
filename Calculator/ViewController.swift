@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     @IBAction func divide(_ sender: Any) {
         model.divide()
     }
-    
+   
     @IBAction func add(_ sender: Any) {
         model.add()
     }
