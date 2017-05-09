@@ -105,6 +105,17 @@ class ViewController: UIViewController {
         labelDisplay.text = ""
     }
     
+    @IBAction func percent(_ sender: Any) {
+        model.percent()
+        equals("")
+    }
+    
+    @IBAction func plusMinus(_ sender: Any) {
+        model.plusMinus()
+        equals("")
+    }
+    
+    
     @IBAction func equals(_ sender: Any) {
         model.equals()
         if model.computedValue != nil {
