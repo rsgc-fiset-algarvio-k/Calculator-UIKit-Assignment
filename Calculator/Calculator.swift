@@ -56,7 +56,6 @@ class Calculator {
         
         updateState()
     }
-    
     /**
      Updates calculator state.
      
@@ -111,7 +110,6 @@ class Calculator {
         } else if operation == Operation.subtraction {
             computedValue = computedValue! - Double(providedValue)!
         }
-        
         // The operation selected has been performed, so get ready to receive new operation
         // and new value
         operation = nil

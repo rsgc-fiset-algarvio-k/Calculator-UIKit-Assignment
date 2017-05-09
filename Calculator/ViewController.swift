@@ -100,6 +100,11 @@ class ViewController: UIViewController {
         model.subtract()
     }
     
+    @IBAction func clear(_ sender: Any) {
+        model.clear()
+        labelDisplay.text = ""
+    }
+    
     @IBAction func equals(_ sender: Any) {
         model.equals()
         if model.computedValue != nil {
