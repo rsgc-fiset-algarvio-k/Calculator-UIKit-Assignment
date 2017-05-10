@@ -66,9 +66,15 @@ class Calculator {
     
     func plusMinus() {
         
-        operation = Operation.addsub
+        if providedValue == "" && computedValue == nil {
+            // do nothing
+        } else {
+            operation = Operation.addsub
+            
+            updateState()
+        }
         
-        updateState()
+        
     }
     /**
      Updates calculator state.
@@ -100,7 +106,7 @@ class Calculator {
                 // 2. When in this branch, a new provided value has been given.
                 
                 // So, perform the operation!
-                equals()    
+                equals()
             }
         }
     }
@@ -123,10 +129,10 @@ class Calculator {
             computedValue = computedValue! - Double(providedValue)!
         } else if operation == Operation.percentage {
             if computedValue != nil {
-            computedValue = computedValue! * (0.01)
-        } else {
-            computedValue = 0
-        }
+                computedValue = computedValue! * (0.01)
+            } else {
+                computedValue = 0
+            }
         } else if operation == Operation.addsub {
             if computedValue != nil {
                 computedValue = computedValue! * (-1)
@@ -134,7 +140,7 @@ class Calculator {
                 computedValue = 0
             }
         }
-
+        
         // The operation selected has been performed, so get ready to receive new operation
         // and new value
         operation = nil
