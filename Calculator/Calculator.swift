@@ -65,7 +65,6 @@ class Calculator {
     }
     
     func plusMinus() {
-        
         if providedValue == "" && computedValue == nil && operation == nil{
             // do nothing
         } else if providedValue == "" && computedValue != nil && operation != nil{
@@ -74,12 +73,10 @@ class Calculator {
             operation = Operation.addsub
         } else if providedValue != "" && computedValue != nil && operation != nil{
             operation = Operation.addsub
-     }
-
-            updateState()
-        
-        
+        }
+        updateState()
     }
+                    
     /**
      Updates calculator state.
      
@@ -138,11 +135,11 @@ class Calculator {
                 computedValue = 0
             }
         } else if operation == Operation.addsub {
-//            if providedValue != "" {
+            if providedValue != "" {
                 computedValue = computedValue! * (-1)
-//            } else {
- //               computedValue = 0
- //           }
+            } else if providedValue == "" {
+                computedValue = computedValue! * (-1)
+            }
         }
         
         // The operation selected has been performed, so get ready to receive new operation
